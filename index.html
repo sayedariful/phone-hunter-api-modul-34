@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hunting Phone API</title>
+
+        <!-- daisy Ul Link -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+            rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    clifford: '#da373d',
+                  }
+                }
+              }
+            }
+          </script>
+    </head>
+    <body class="bg-zinc-200">
+        <header>
+            <h1 class="text-4xl font-bold text-gray-500">Hunting Phone</h1>
+        </header>
+        <main class="container mx-auto mt-8">
+
+            <section class="bg-white">
+                <input id="search-field" type="text"
+                    placeholder="Search Phones...."
+                    class="input input-ghost w-full max-w-xs bg-white" />
+                <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+
+                <!-- another search field -->
+                <!-- <input id="field-search" type="text" placeholder="Search Field2"
+                    class="input input-bordered w-full max-w-xs" />
+                <button onclick="searchHandle()" class="btn btn-primary">Search</button> -->
+            </section>
+
+            <!-- search result -->
+            <section class="mt-8">
+                <!-- spinner or loader -->
+                <div id="loading-spinner" class="my-40 text-center hidden">
+                    <span class="loading loading-dots loading-lg"></span>
+                </div>
+                <div id="phone-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                </div>
+                <!-- show all button -->
+                <div id="show-all-container" class="hidden text-center my-8">
+                    <button onclick="handleShowAll()" class="btn btn-accent">Show
+                        All</button>
+                </div>
+            </section>
+
+            <!-- Show Details Modal -->
+            <!-- Open the modal using ID.showModal() method -->
+
+            <dialog id="show_details_modal"
+                class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <h3 id="show-detail-phone-name" class="font-bold text-3x"></h3>
+                    <div id="show-detail-container">
+
+                    </div>
+                    <div class="modal-action">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </main>
+
+        <!-- scripts -->
+        <script src="js/index-1.js"></script>
+    </body>
+</html>
